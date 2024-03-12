@@ -206,7 +206,6 @@ class ContactController extends Controller
       $ContactController = new ContactController;
       $contactUpdate = $this->contact();  
     }
-    dd('hello');
   }
 
   //問い合わせ内容を削除する
