@@ -21,8 +21,8 @@
                             <p class="error-text">{$errorMessages['name']|default:''}</p>
                         </div>
                         <div class="form-item">
-                            <label for="kana">ふりがな</label>
-                            <input type="text" name="kana" placeholder="てすとたろう" value="{$data->kana|default:$data['kana']}">
+                            <label for="kana">フリガナ</label>
+                            <input type="text" name="kana" placeholder="テストタロウ" value="{$data->kana|default:$data['kana']}">
                             <p class="error-text">{$errorMessages['kana']|default:''}</p>
                         </div>
                         <div class="form-item">

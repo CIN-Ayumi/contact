@@ -52,7 +52,7 @@ function content_65eed8332ff785_07006914 (Smarty_Internal_Template $_smarty_tpl)
 </p>
                     </div>
                     <div class="form-item">
-                        <p class="label-text">ふりがな</p>
+                        <p class="label-text">フリガナ</p>
                         <p class="data-text"><?php echo $_smarty_tpl->tpl_vars['data']->value->kana;?>
 </p>
                     </div>

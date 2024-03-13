@@ -14,7 +14,7 @@ class User extends Db
      * メールアドレスが一意か判定後ユーザー登録処理を行ってユーザーIDを返却する
      *
      * @param string $name 氏名
-     * @param string $kana ふりがな
+     * @param string $kana フリガナ
      * @param string $email メールアドレス
      * @param string $password パスワード
      * @return false|string 'ユーザーID' または メールアドレスが重複している場合はfalseを返却
@@ -112,7 +112,7 @@ class User extends Db
     * ユーザーの情報を更新する
     * @param string $id 更新対象のユーザーID
     * @param string $name 氏名
-    * @param string $kana ふりがな
+    * @param string $kana フリガナ
     * @param string $email メールアドレス
     * @param string|null $password パスワード
     * @return bool メールアドレス重複時は更新処理をせずfalseを返却する

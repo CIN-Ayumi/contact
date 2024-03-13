@@ -11,7 +11,6 @@ class Controller
     public function view(string $template, array $params = []): void
     {
         $Smarty = new Smarty();
-        $Smarty->allow_php_tag = true;
         $Smarty->setTemplateDir(ROOT_PATH.'Views');
         $Smarty->setCompileDir(ROOT_PATH.'Views/compile');
         $Smarty->assign($params);

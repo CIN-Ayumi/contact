@@ -40,25 +40,25 @@ class ContactController extends Controller
       $body = htmlspecialchars($_POST['contactBody']);
 
       if(empty($name)){
-        $errorMessages['name'] = '氏名を入力してください。';
+        $errorMessages['name'] = '氏名は必須入力です。';
       } else { 
         $keepText['name'] = $name;
       }
 
       if(empty($kana)){
-        $errorMessages['kana'] = 'ふりがなを入力してください。';
+        $errorMessages['kana'] = 'フリガナは必須入力です。';
       } else {
         $keepText['kana'] = $kana;
       }
 
       if(empty($email)){
-        $errorMessages['email_1'] = 'メールアドレスを入力してください。';
+        $errorMessages['email_1'] = 'メールアドレスは必須入力です。';
       } else {
         $keepText['email'] = $email;
       }
 
       if(empty($body)){
-        $errorMessages['body'] = 'お問い合わせ内容を入力してください。';
+        $errorMessages['body'] = 'お問い合わせ内容は必須入力です。';
       } else {
         $keepText['body'] = $body;
       }
@@ -111,7 +111,7 @@ class ContactController extends Controller
       $errorMessages['name'] = '氏名を入力してください。';
     }
     if (count($_POST['name']) > 10 ) {
-      $errorMessages['nameCount'] = '氏名は10文字以内で入力して下さい。';
+      $errorMessages['nameCount'] = '氏名は10文字以内です。';
     } else {
       $contact = new Contact;
       $result = $contact->create(
@@ -152,19 +152,19 @@ class ContactController extends Controller
     $body = htmlspecialchars($_POST['body']);
 
     if(empty($name)){
-      $errorMessages['name'] = '氏名を入力してください。';
+      $errorMessages['name'] = '氏名は必須入力です。';
     }
 
     if(empty($kana)){
-      $errorMessages['kana'] = 'ふりがなを入力してください。';
+      $errorMessages['kana'] = 'フリガナは必須入力です。';
     }
 
     if(empty($email)){
-      $errorMessages['email_1'] = 'メールアドレスを入力してください。';
+      $errorMessages['email_1'] = 'メールアドレスは必須入力です。';
     }
 
     if(empty($body)){
-      $errorMessages['body'] = 'お問い合わせ内容を入力してください。';
+      $errorMessages['body'] = 'お問い合わせ内容は必須入力です。';
     } 
 
     if (!empty($tel)) {

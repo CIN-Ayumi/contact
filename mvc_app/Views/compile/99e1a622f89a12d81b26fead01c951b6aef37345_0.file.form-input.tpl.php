@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-11 17:57:18
-  from '/Applications/MAMP/htdocs/mvc_app/Views/contact/form-input.tpl' */
+/* Smarty version 4.3.4, created on 2024-03-12 17:47:10
+  from '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/form-input.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65eec76e62bc33_65421456',
+  'unifunc' => 'content_65f0168e399c85_69865928',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '79a5e6e303dc97b436bb5269907438e4a0e5fab8' => 
+    '99e1a622f89a12d81b26fead01c951b6aef37345' => 
     array (
-      0 => '/Applications/MAMP/htdocs/mvc_app/Views/contact/form-input.tpl',
-      1 => 1710147436,
+      0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/form-input.tpl',
+      1 => 1710233228,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65eec76e62bc33_65421456 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f0168e399c85_69865928 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
   <head>
@@ -47,40 +47,40 @@ function content_65eec76e62bc33_65421456 (Smarty_Internal_Template $_smarty_tpl)
         <?php $_smarty_tpl->_subTemplateRender("file:layout/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <div class="row justify-content-center">
-          <div class="mx-auto col-8">
-            <h2 class="mt-5">入力内容の確認</h2>
+          <div class="mx-auto col-6">
+            <h2 class="mt-5 text-center">入力内容の確認</h2>
             <form action="form-output" method="post" class="bg-white p-3 rounded mb-5 mx-auto">
               <div class="form-item">
-                <p class="label-text">氏名</p>
-                <p class="data-text"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+                <p class="label-text mb-1" style="font-size:1.2rem">氏名</p>
+                <p class="data-text mb-4"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
 </p>
                 <input type="hidden" name="name" value=<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
 >
               </div>
               <div class="form-item">
-                <p class="label-text">フリガナ</p>
-                <p class="data-text"><?php echo $_smarty_tpl->tpl_vars['kana']->value;?>
+                <p class="label-text mb-1" style="font-size:1.2rem">フリガナ</p>
+                <p class="data-text mb-4"><?php echo $_smarty_tpl->tpl_vars['kana']->value;?>
 </p>
                 <input type="hidden" name="kana" value=<?php echo $_smarty_tpl->tpl_vars['kana']->value;?>
 >
               </div>
               <div class="form-item">
-                <p class="label-text">電話番号</p>
-                <p class="data-text"><?php echo $_smarty_tpl->tpl_vars['tel']->value;?>
+                <p class="label-text mb-1" style="font-size:1.2rem">電話番号</p>
+                <p class="data-text mb-4"><?php echo $_smarty_tpl->tpl_vars['tel']->value;?>
 </p>
                 <input type="hidden" name="tel" value=<?php echo $_smarty_tpl->tpl_vars['tel']->value;?>
 >
               </div>
               <div class="form-item">
-                <p class="label-text">メールアドレス</p>
-                <p class="data-text"><?php echo $_smarty_tpl->tpl_vars['email']->value;?>
+                <p class="label-text mb-1" style="font-size:1.2rem">メールアドレス</p>
+                <p class="data-text mb-4"><?php echo $_smarty_tpl->tpl_vars['email']->value;?>
 </p>
                 <input type="hidden" name="email" value=<?php echo $_smarty_tpl->tpl_vars['email']->value;?>
 >
               </div>
               <div class="form-item">
-                <p class="label-text">お問い合わせ内容</p>
-                <p class="data-text"><?php echo nl2br($_smarty_tpl->tpl_vars['body']->value);?>
+                <p class="label-text mb-1" style="font-size:1.2rem">お問い合わせ内容</p>
+                <p class="data-text mb-4"><?php echo nl2br($_smarty_tpl->tpl_vars['body']->value);?>
 </p>
                 <textarea style="display: none;" readonly name="body"><?php echo $_smarty_tpl->tpl_vars['body']->value;?>
 </textarea>

@@ -52,7 +52,7 @@ class UserController extends Controller
         }
 
         if (empty($_POST['kana'])) {
-            $errorMessages['kana'] = 'ふりがなを入力してください。';
+            $errorMessages['kana'] = 'フリガナを入力してください。';
         }
 
         if (empty($_POST['email'])) {
@@ -176,7 +176,7 @@ class UserController extends Controller
         }
 
         if(empty($_POST['kana'])){
-            $errorMessages['kana'] = 'ふりがなを入力してください。';
+            $errorMessages['kana'] = 'フリガナを入力してください。';
         }
 
         if(empty($_POST['email'])){

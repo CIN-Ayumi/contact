@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-11 09:53:57
-  from '/Applications/MAMP/htdocs/mvc_app/Views/user/signup.tpl' */
+/* Smarty version 4.3.4, created on 2024-03-12 07:12:02
+  from '/Users/itouayumi/geekation/contact/mvc_app/Views/user/login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65eed4b5177e54_64476127',
+  'unifunc' => 'content_65f000422f8c87_32966146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '6cd1058b873e5d9a2459a3b3eb68bd313fa54b48' => 
+    '5166e4be8bbc2cd3a13049abb88afb423679da02' => 
     array (
-      0 => '/Applications/MAMP/htdocs/mvc_app/Views/user/signup.tpl',
-      1 => 1710150835,
+      0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/user/login.tpl',
+      1 => 1710150800,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65eed4b5177e54_64476127 (Smarty_Internal_Template $_smarty_tpl) {
-?><!doctype html>
-<html lang="ja">
+function content_65f000422f8c87_32966146 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>新規会員登録</title>
+        <title>Casteria</title>
         <link rel="stylesheet" type="text/css" href="../css/base.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <?php echo '<script'; ?>
@@ -47,25 +47,13 @@ function content_65eed4b5177e54_64476127 (Smarty_Internal_Template $_smarty_tpl)
         <div class="p-4 container-field form-orange main">
             <div class="row justify-content-center">
                 <div class="col-lg-6 mx-auto col-md-8">
-                    <h2 class="mb-4 mt-4 text-center">新規会員登録</h2>
-                    <form action="/user/create" method="post" class="bg-white p-3 rounded mb-5" >
-                        <div class="form-group">
-                            <label for="name">氏名</label>
-                            <input type="text" class="form-control" name="name" placeholder="テスト太郎" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['post']->value['name'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
-">
-                            <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['name'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
+                    <h2 class="mt-5 text-center mb-4">ログイン</h2>
+                    <form action="/user/certification" method="post" class="bg-white p-3 rounded mb-5">
+                        <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['auth'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
-                        </div>
-                        <div class="form-group">
-                            <label for="furigana">フリガナ</label>
-                            <input type="text" class="form-control" name="kana" placeholder="テストタロウ" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['post']->value['kana'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
-">
-                            <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['kana'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
-</p>
-                        </div>
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
-                            <input type="email" class="form-control"  name="email" placeholder="geekation@exemple.com" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['post']->value['email'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
+                            <input type="email" class="form-control" name="email" placeholder="geekation@exemple.com" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['post']->value['email'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 ">
                             <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['email'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
@@ -77,41 +65,40 @@ function content_65eed4b5177e54_64476127 (Smarty_Internal_Template $_smarty_tpl)
                             <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['password'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
                         </div>
-                        <div class="form-group">
-                            <label for="password-confirm">パスワード確認</label>
-                            <input type="password" class="form-control" name="password-confirmation" placeholder="password" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['post']->value['password-confirmation'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
-">
-                            <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['password-confirmation'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
-</p>
+                        <div class="button-group">
+                            <button class="btn bg-warning my-2">ログイン</button>
                         </div>
-                        <button class="btn bg-warning my-2">送信</button>
                     </form>
                 </div>
             </div>
             <div>
-                <div class="row m-auto text-center">
-                    <div class="col-lg-6 mx-auto col-md-8">
+                <div class="row justify-content-md-center text-center">
+                    <div class="col-lg-6 mx-auto col-md-8" >
                         <div class="p-3 rounded mb-5">
-                            <div class="m-1 m-auto">
-                                <p class="text-center" ><a href="/user/log-in">登録がお済みの方</a></p>
+                            <div class="m-3">
+                                <a href="/user/sign-up">登録がお済みでない方</a>
                             </div>
-                            <div class="m-1 justify-content-center">
-                                <p class="text-center"><a href="/">トップページへ</a></p>
+                            <div class="m-3">
+                                <a href="#">パスワードをお忘れの方</a>
+                            </div>
+                            <div class="m-3">
+                                <a href="/">トップページへ</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php $_smarty_tpl->_subTemplateRender("file:layout/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    </div>
+    <?php $_smarty_tpl->_subTemplateRender("file:layout/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-        <?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-        <?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-        <?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"><?php echo '</script'; ?>
 >
     </body>

@@ -18,31 +18,31 @@
   {include file="layout/header.tpl" }
     <div class="p-4 container-field form-orange">
       <div class="row justify-content-center">
-        <div class="mx-auto col-8">
+        <div class="mx-auto col-6">
           <h2 class="mb-4 text-center">お問い合わせ</h2>        
           <form id="contactForm" action="/contact/form-input" method="post" class="bg-white p-3 rounded mb-5 mx-auto " >
             <div class="contact-group">
-            <label for="name">氏名</label>
+              <p class="mb-1" style="font-size: 1.2rem;">氏名</p>
               <input type="text" id="checkName" class="form-control blank" name="contactName" placeholder="テスト太郎" value={$keepText['name']}>
               <p class="blankAttention" style="color: red;">氏名は必須入力です</p>
               <p class="nameLength" style="color: red;"></p>
               <p style="color: red;">{$errorMessages['name']}</p>
             </div>
             <div class="contact-group">
-              <label for="furigana">ふりがな</label>
-              <input type="text" id="checkKana" class="form-control blank" name="contactKana" placeholder="てすとたろう" value={$keepText['kana']}>
-              <p class="blankAttention" style="color: red;">ふりがなは必須入力です</p>
+              <p class="mb-1" style="font-size: 1.2rem;">フリガナ</p>
+              <input type="text" id="checkKana" class="form-control blank" name="contactKana" placeholder="テストタロウ" value={$keepText['kana']}>
+              <p class="blankAttention" style="color: red;">フリガナは必須入力です</p>
               <p class="kanaLength" style="color: red;"></p>
               <p style="color: red;">{$errorMessages['kana']}</p>
             </div>
             <div class="contact-group">
-              <label for="tel">電話番号</label>
+              <p class="mb-1" style="font-size: 1.2rem;">電話番号</p>
               <input type="tel" id="checkTel" class="form-control"  name="contactTel" placeholder="080xxxxxxxx" value={$keepText['tel']}>
               <p class="telAttention" style="color: red;"></p>
               <p style="color: red;">{$errorMessages['tel']}</p>
             </div>
             <div class="contact-group">
-              <label for="email">メールアドレス</label>
+              <p class="mb-1" style="font-size: 1.2rem;">メールアドレス</p>
               <input type="email" id="checkEmail" class="form-control blank"  name="contactEmail" placeholder="geekation@exemple.com" value={$keepText['email']}>
               <p class="blankAttention" style="color: red;">メールアドレスは必須入力です</p>
               <p class="emailAttention" style="color: red;"></p>
@@ -50,13 +50,13 @@
               <p style="color: red;">{$errorMessages['email_2']}</p>
             </div>
             <div class="contact-group">
-              <label for="textarea">お問い合わせ内容</label>
+              <p class="mb-1" style="font-size: 1.2rem;">お問い合せ内容</p>
               <textarea id="checkBody" class="form-control blank"  name="contactBody" placeholder="お問い合わせ内容">{$keepText['body']}</textarea>
               <p class="blankAttention" style="color: red;">お問い合せ内容は必須入力です</p>
               <p style="color: red;">{$errorMessages['body']}</p>
             </div>
             <div class="d-flex justify-content-center">
-              <input type="submit" class="col-3" value="送信">
+              <input type="submit" class="col-3 btn btn-warning" value="送信">
             </div>
           </form>
         </div>
@@ -64,7 +64,7 @@
     <div class="row justify-content-center">
       <table>
         {if count($contacts) > 0}
-        <tr><th></th><th>氏名</th><th>ふりがな</th><th>電話番号</th><th>メールアドレス</th><th>お問い合せ内容</th></tr>
+        <tr><th></th><th>氏名</th><th>フリガナ</th><th>電話番号</th><th>メールアドレス</th><th>お問い合せ内容</th></tr>
         {foreach $contacts as $contact}
         <form id="contactForm{$contact['id']}" action="/contact/update" method="post">
           <tr><td class="bg-white"><input type="hidden" name="id" value={$contact['id']}></td>
@@ -73,8 +73,8 @@
           <td class="bg-white"><input readonly type="text" class="border-0 p-1" name="tel" value={htmlspecialchars($contact['tel'])}></td>
           <td class="bg-white"><input readonly type="text" class="border-0 p-1" name="email" value={htmlspecialchars($contact['email'])}></td>
           <td class="bg-white"><input readonly type="text" class="border-0 p-1" name="body" value={htmlspecialchars($contact['body'])}></td>
-          <td><input id="UpdateBtn{$contact['id']}" type="button" value="編集"></td>
-          <td><input id="DeleteBtn{$contact['id']}" type="button" value="削除"></td>
+          <td><input id="UpdateBtn{$contact['id']}" class="ml-2" type="button" value="編集"></td>
+          <td><input id="DeleteBtn{$contact['id']}" class="ml-2" type="button" value="削除"></td>
           </tr>
 
           <script>

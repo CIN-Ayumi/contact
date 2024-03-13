@@ -25,8 +25,8 @@
                             <p class="error-text">{$errorMessages['name']|default:''}</p>
                         </div>
                         <div class="form-group">
-                            <label for="furigana">ふりがな</label>
-                            <input type="text" class="form-control" name="kana" placeholder="てすとたろう" value="{$post['kana']|default:''}">
+                            <label for="furigana">フリガナ</label>
+                            <input type="text" class="form-control" name="kana" placeholder="テストタロウ" value="{$post['kana']|default:''}">
                             <p class="error-text">{$errorMessages['kana']|default:''}</p>
                         </div>
                         <div class="form-group">

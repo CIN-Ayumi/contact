@@ -17,32 +17,32 @@
       <div class="container-field">
         {include file="layout/header.tpl"}
         <div class="row justify-content-center">
-          <div class="mx-auto col-8">
-            <h2 class="mt-5">入力内容の確認</h2>
+          <div class="mx-auto col-6">
+            <h2 class="mt-5 text-center">入力内容の確認</h2>
             <form action="form-output" method="post" class="bg-white p-3 rounded mb-5 mx-auto">
               <div class="form-item">
-                <p class="label-text">氏名</p>
-                <p class="data-text">{$name}</p>
+                <p class="label-text mb-1" style="font-size:1.2rem">氏名</p>
+                <p class="data-text mb-4">{$name}</p>
                 <input type="hidden" name="name" value={$name}>
               </div>
               <div class="form-item">
-                <p class="label-text">ふりがな</p>
-                <p class="data-text">{$kana}</p>
+                <p class="label-text mb-1" style="font-size:1.2rem">フリガナ</p>
+                <p class="data-text mb-4">{$kana}</p>
                 <input type="hidden" name="kana" value={$kana}>
               </div>
               <div class="form-item">
-                <p class="label-text">電話番号</p>
-                <p class="data-text">{$tel}</p>
+                <p class="label-text mb-1" style="font-size:1.2rem">電話番号</p>
+                <p class="data-text mb-4">{$tel}</p>
                 <input type="hidden" name="tel" value={$tel}>
               </div>
               <div class="form-item">
-                <p class="label-text">メールアドレス</p>
-                <p class="data-text">{$email}</p>
+                <p class="label-text mb-1" style="font-size:1.2rem">メールアドレス</p>
+                <p class="data-text mb-4">{$email}</p>
                 <input type="hidden" name="email" value={$email}>
               </div>
               <div class="form-item">
-                <p class="label-text">お問い合わせ内容</p>
-                <p class="data-text">{nl2br($body)}</p>
+                <p class="label-text mb-1" style="font-size:1.2rem">お問い合わせ内容</p>
+                <p class="data-text mb-4">{nl2br($body)}</p>
                 <textarea style="display: none;" readonly name="body">{$body}</textarea>
               </div>
               <div class="row">

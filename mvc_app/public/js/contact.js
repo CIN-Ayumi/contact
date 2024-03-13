@@ -20,7 +20,7 @@ function lengthCheck(check, length, text){
   check.addEventListener('input',() => {
   const attentionPoint = check.value.length;
   if(attentionPoint > 10){
-    length.textContent = text + 'は10文字以内で入力して下さい。';
+    length.textContent = text + 'は10文字以内です。';
   } else{
     length.textContent = '';
   }
@@ -35,7 +35,7 @@ lengthCheck(checkName, nameLength, '氏名');
 //フリガナ文字数チェック
 const checkKana = document.querySelector('#checkKana');
 const kanaLength = document.querySelector('.kanaLength');
-lengthCheck(checkKana, kanaLength, 'ふりがな');
+lengthCheck(checkKana, kanaLength, 'フリガナ');
 
 //空チェック
 const blanks = document.querySelectorAll('.blank');
@@ -51,7 +51,7 @@ blanks.forEach(function(blank, index) {
           blankAttentions[0].textContent = '氏名は必須入力です';
           break;
         case 1:
-          blankAttentions[1].textContent = 'ふりがなは必須入力です'
+          blankAttentions[1].textContent = 'フリガナは必須入力です'
           break;
         case 2:
           blankAttentions[2].textContent = 'メールアドレスは必須入力です';

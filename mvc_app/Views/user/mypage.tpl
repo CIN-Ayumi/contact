@@ -21,7 +21,7 @@
                         <p class="data-text">{$data->name}</p>
                     </div>
                     <div class="form-item">
-                        <p class="label-text">ふりがな</p>
+                        <p class="label-text">フリガナ</p>
                         <p class="data-text">{$data->kana}</p>
                     </div>
                     <div class="form-item">

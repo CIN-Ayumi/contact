@@ -18,33 +18,33 @@
       <div class="container-field">
       {include file="layout/header.tpl"}
         <div class="row justify-content-center">
-          <div class="mx-auto col-8">
+          <div class="mx-auto col-6">
             <h2 class="m-4 text-center">お問い合せ内容</h2>
             <form id="contactForm" action="/contact/update-completed" method="post" class="bg-white p-3 rounded mb-5 mx-auto">
               <input type="hidden" name="id" value="{$myContact['id']}">
               <div class="form-item container">
                 <p class="label-text">氏名</p>
-                <input id="checkName" class="blank col-11" type="text" name="name" value={$myContact['name']}>
+                <input id="checkName" class=" form-control blank col-11" type="text" name="name" value={$myContact['name']}>
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="nameLength" style="color: red;"></p>
                 <p style="color: red;">{$errorMessages['name']}</p>
               </div>
               <div class="form-item container">
-                <p class="label-text">ふりがな</p>
-                <input id="checkKana" class="blank col-11" type="text" name="kana" value={$myContact['kana']}>
+                <p class="label-text">フリガナ</p>
+                <input id="checkKana" class="form-control blank col-11" type="text" name="kana" value={$myContact['kana']}>
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="kanaLength" style="color: red;"></p>
                 <p style="color: red;">{$errorMessages['kana']}</p>
               </div>
               <div class="form-item container">
                 <p class="label-text">電話番号</p>
-                <input id="checkTel" class="col-11" type="text" name="tel" value={$myContact['tel']}>
+                <input id="checkTel" class="form-control col-11" type="text" name="tel" value={$myContact['tel']}>
                 <p class="telAttention" style="color: red;"></p>
                 <p style="color: red;">{$errorMessages['tel']}</p>
               </div>
               <div class="form-item container">
                 <p class="label-text">メールアドレス</p>
-                <input id="checkEmail" class="blank col-11" type="text" name="email" value={$myContact['email']}>
+                <input id="checkEmail" class="form-control blank col-11" type="text" name="email" value={$myContact['email']}>
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="emailAttention" style="color: red;"></p>
                 <p style="color: red;">{$errorMessages['email_1']}</p>
@@ -52,15 +52,17 @@
               </div>
               <div class="form-item container">
                 <p class="label-text">お問い合わせ内容</p>
-                <textarea id="checkBody" class="blank col-11" name="body">{$myContact['body']}</textarea>
+                <textarea id="checkBody" class="form-control blank col-11" name="body">{$myContact['body']}</textarea>
                 <p class="blankAttention" style="color: red;"></p>
                 <p style="color: red;">{$errorMessages['body']}</p>
               </div>
               <div class="row">
                 <p class="mx-auto">上記の内容に変更しますか？</p>
               </div>
-              <input type="submit" class="col-4 row justify-content-center" value="更新">
-              <button class="col-4 row justify-content-center mt-2">キャンセル</button>
+              <div class="text-center">
+                <input type="submit" class="col-4 btn btn-warning mb-3" value="更新"><br>
+                <button class="col-4 mt-2 mb-5 btn btn-light">キャンセル</button>
+              </div>
             </form>
           </div>
         </div>

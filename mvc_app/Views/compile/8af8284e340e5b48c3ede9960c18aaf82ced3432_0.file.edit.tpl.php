@@ -52,8 +52,8 @@ function content_65d6e849a6bcf9_14152391 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
 
                 <div class="form-item">
-                    <label for="kana">ふりがな</label>
-                    <input type="text" name="kana" placeholder="てすとたろう" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['data']->value->kana ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['data']->value['kana'] ?? null : $tmp);?>
+                    <label for="kana">フリガナ</label>
+                    <input type="text" name="kana" placeholder="テストタロウ" value="<?php echo (($tmp = $_smarty_tpl->tpl_vars['data']->value->kana ?? null)===null||$tmp==='' ? $_smarty_tpl->tpl_vars['data']->value['kana'] ?? null : $tmp);?>
 ">
                     <p class="error-text"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['kana'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>

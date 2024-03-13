@@ -15,7 +15,7 @@ class Contact extends Db{
   /*
    * お問い合わせ機能 
    * @param string $name 氏名
-   * @param string $kana ふりがな
+   * @param string $kana フリガナ
    * @param string $tel 電話番号
    * @param string $email メールアドレス
    * @param string $body お問い合せ内容
