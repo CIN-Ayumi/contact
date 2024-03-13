@@ -19,6 +19,7 @@
     <div class="p-4 container-field form-orange">
       <div class="row justify-content-center">
         <div class="mx-auto col-6">
+          <p style="color: red;">{$errorMessages['token']|default : ''}</p>
           <h2 class="mb-4 text-center">お問い合わせ</h2>
           <form id="contactForm" action="/contact/form-input" method="post" class="bg-white p-3 rounded mb-5 mx-auto " >
             <div class="contact-group">
@@ -76,7 +77,6 @@
           <td><input id="UpdateBtn{$contact['id']}" class="ml-2" type="button" value="編集"></td>
           <td><input id="DeleteBtn{$contact['id']}" class="ml-2" type="button" value="削除"></td>
           </tr>
-
           <script>
             document.getElementById("UpdateBtn{$contact['id']}").addEventListener("click", function(){
               document.getElementById("contactForm{$contact['id']}").submit();

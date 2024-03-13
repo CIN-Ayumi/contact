@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-13 14:04:51
+/* Smarty version 4.3.4, created on 2024-03-13 15:47:45
   from '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65f133f3e7dc92_46240589',
+  'unifunc' => 'content_65f14c11c77949_20875567',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ae6a3edc0d37261ef84ad1eb2c6d0b73fb5b7ec' => 
     array (
       0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/index.tpl',
-      1 => 1710306181,
+      1 => 1710312322,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65f133f3e7dc92_46240589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f14c11c77949_20875567 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +51,8 @@ function content_65f133f3e7dc92_46240589 (Smarty_Internal_Template $_smarty_tpl)
     <div class="p-4 container-field form-orange">
       <div class="row justify-content-center">
         <div class="mx-auto col-6">
+          <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['token'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
+</p>
           <h2 class="mb-4 text-center">お問い合わせ</h2>
           <form id="contactForm" action="/contact/form-input" method="post" class="bg-white p-3 rounded mb-5 mx-auto " >
             <div class="contact-group">
@@ -133,7 +135,6 @@ $_smarty_tpl->tpl_vars['contact']->do_else = false;
           <td><input id="DeleteBtn<?php echo $_smarty_tpl->tpl_vars['contact']->value['id'];?>
 " class="ml-2" type="button" value="削除"></td>
           </tr>
-
           <?php echo '<script'; ?>
 >
             document.getElementById("UpdateBtn<?php echo $_smarty_tpl->tpl_vars['contact']->value['id'];?>

@@ -56,6 +56,7 @@
                 <p class="blankAttention" style="color: red;"></p>
                 <p style="color: red;">{$errorMessages['body']|default:''}</p>
               </div>
+              <input type="hidden" name="token" value="{$token}">
               <div class="row">
                 <p class="mx-auto">上記の内容に変更しますか？</p>
               </div>

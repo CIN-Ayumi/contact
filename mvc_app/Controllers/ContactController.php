@@ -85,48 +85,55 @@ class ContactController extends Controller
         $_SESSION['post'] = $_POST;
         $contact = new Contact;
         $contacts = $contact->getContacts();  
-        // header('Location: /index');
         $this->view('contact/index', ['errorMessages' => $errorMessages, 'keepText' => $keepText, 'contacts' => $contacts]);
   
       } else { //バリデーション成功
+        //トークン作成
+        $token = bin2hex(random_bytes(32));
+        $_SESSION['token'] = $token;
         $this->view('contact/form-input', 
         ['name' => $name,
           'kana' => $kana,
           'tel' => $tel,
           'email' => $email,
-          'body' => $body
+          'body' => $body,
+          'token' => $token
         ]);
       }
     }
 
   //入力完了画面
   public function formOutput(){
-
+    //直接アクセスしてきた場合indexに飛ぶ
     if ($_SERVER['REQUEST_METHOD'] === 'GET'){
       header('Location: /contact/index');
       exit();
     }
+    //トークンがどちらか無い場合
+    if(!$_POST["token"] || !$_SESSION["token"]){
+      $errorMessages['token'] = '不正な処理が行われました。';
+      $this->view('contact/index', ['errorMessages' => $errorMessages]);
+    }
+    //トークンが揃っている場合
+    if(isset($_POST['token']) && isset($_SESSION['token'])){
 
-    $errorMessages = [];
-    if (empty($_POST['name'])) {
-      $errorMessages['name'] = '氏名を入力してください。';
-    }
-    if (count($_POST['name']) > 10 ) {
-      $errorMessages['nameCount'] = '氏名は10文字以内です。';
-    } else {
-      $contact = new Contact;
-      $result = $contact->create(
-          $_POST['name'],
-          $_POST['kana'],
-          $_POST['tel'],
-          $_POST['email'],
-          $_POST['body']
-      );
-      $this->view('contact/form-output');
-    }
+      if($_POST['token'] != $_SESSION['token']){
+        $errorMessages['token'] = '不正な処理が行われました。';
+        $this->view('contact/index', ['errorMessages' => $errorMessages]);
+
+      } else if($_POST['token']=== $_SESSION['token']){
+          $contact = new Contact;
+          $result = $contact->create(
+            $_POST['name'],
+            $_POST['kana'],
+            $_POST['tel'],
+            $_POST['email'],
+            $_POST['body']
+          );
+          $this->view('contact/form-output');
+      }
+    }        
   }
-
-
 
   //更新内容入力画面
   public function ContactUpdate(){
@@ -135,15 +142,23 @@ class ContactController extends Controller
       header('Location: /contact/index');
       exit();
     }
-      
+    //トークンの作成
+    $token = bin2hex(random_bytes(32));
+    $_SESSION['token'] = $token;
+
     //取得したIDに基づいたデータをDBから取得
     $contact = new Contact;
     $myContact = $contact->getMyContact($_POST['id']);
-    $this->view('contact/update', ['myContact' => $myContact]);
+    $this->view('contact/update', ['myContact' => $myContact , 'token' => $token]);
   }
 
   //問い合わせ内容更新
   public function UpdateConpleted(){
+    //直接アクセスした場合はお問い合せトップへ戻る
+    if ($_SERVER['REQUEST_METHOD'] === 'GET'){
+      header('Location: /contact/index');
+      exit();
+    }
     $errorMessages = [];
 
     $name = htmlspecialchars($_POST['name']);
@@ -179,33 +194,43 @@ class ContactController extends Controller
       $inputEmail = $email;
       if (!ContactController::isValidEmail($inputEmail)) {
           $errorMessages['email_2'] = 'メールアドレスには「＠」を含む形式で入力して下さい';
-      } else {
-      }
+      } 
     }
       
     if (!empty($errorMessages)){
       //バリデーション失敗
       $_SESSION['errorMessages'] = $errorMessages;
-      $_SESSION['post'] = $_POST;
-      // header('Location: /index');
-      
+      $_SESSION['post'] = $_POST;      
       $this->view('contact/update', [ 'errorMessages' => $errorMessages]);
     } else {
 
-      //DBに更新内容の送信
-      $contact = new Contact;
-      $result = $contact->update(
-        $_POST['id'],
-        $_POST['name'],
-        $_POST['kana'],
-        $_POST['tel'],
-        $_POST['email'],
-        $_POST['body']
-      );
-      
-      //内容再取得、入力画面に戻る
-      $ContactController = new ContactController;
-      $contactUpdate = $this->contact();  
+      //トークンがどちらか無い場合
+      if(!$_POST["token"] || !$_SESSION["token"]){
+        $errorMessages['token'] = '不正な処理が行われました。';
+        $this->view('contact/index', ['errorMessages' => $errorMessages]);
+      }
+      //トークンが揃っている場合
+      if(isset($_POST['token']) && isset($_SESSION['token'])){
+        if($_POST['token'] != $_SESSION['token']){
+          $errorMessages['token'] = '不正な処理が行われました。';
+          $this->view('contact/index', ['errorMessages' => $errorMessages]);
+
+        } else if($_POST['token'] === $_SESSION['token']){
+          //DBに更新内容の送信
+          $contact = new Contact;
+          $result = $contact->update(
+            $_POST['id'],
+            $_POST['name'],
+            $_POST['kana'],
+            $_POST['tel'],
+            $_POST['email'],
+            $_POST['body']
+          );      
+          //内容再取得、入力画面に戻る
+          $ContactController = new ContactController;
+          $contactUpdate = $this->contact();
+        }
+      }
     }
   }
 

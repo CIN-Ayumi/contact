@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-13 14:25:37
+/* Smarty version 4.3.4, created on 2024-03-13 16:30:11
   from '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65f138d17065c6_77077382',
+  'unifunc' => 'content_65f1560367de63_39020278',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a1c20519111557165353e7eb1960055cbb4af8b' => 
     array (
       0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/update.tpl',
-      1 => 1710307533,
+      1 => 1710315007,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65f138d17065c6_77077382 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f1560367de63_39020278 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -98,6 +98,8 @@ function content_65f138d17065c6_77077382 (Smarty_Internal_Template $_smarty_tpl)
                 <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['body'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
               </div>
+              <input type="hidden" name="token" value="<?php echo $_smarty_tpl->tpl_vars['token']->value;?>
+">
               <div class="row">
                 <p class="mx-auto">上記の内容に変更しますか？</p>
               </div>

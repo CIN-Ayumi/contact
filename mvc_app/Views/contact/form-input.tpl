@@ -45,6 +45,7 @@
                 <p class="data-text mb-4">{nl2br($body)}</p>
                 <textarea style="display: none;" readonly name="body">{$body}</textarea>
               </div>
+              <input type="hidden" name="token" value="{$token}">
               <div class="row">
                 <p class="mx-auto">上記の内容でよろしいですか？</p>
               </div>

@@ -79,6 +79,9 @@ function route($path, $httpMethod){
                     case ['update-completed', 'post']:
                         $methodName = 'UpdateConpleted';
                         break;
+                    case ['update-completed', 'get']:
+                        $methodName = 'UpdateConpleted';
+                        break;    
                     case ['delete', 'post']:
                         $methodName = 'ContactDelete';
                         break;
