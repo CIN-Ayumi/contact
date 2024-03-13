@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-13 10:42:50
+/* Smarty version 4.3.4, created on 2024-03-13 10:46:02
   from '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65f1049a6a10e7_51234423',
+  'unifunc' => 'content_65f1055aa894a6_18005771',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ae6a3edc0d37261ef84ad1eb2c6d0b73fb5b7ec' => 
     array (
       0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/index.tpl',
-      1 => 1710294061,
+      1 => 1710294247,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65f1049a6a10e7_51234423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f1055aa894a6_18005771 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +58,8 @@ function content_65f1049a6a10e7_51234423 (Smarty_Internal_Template $_smarty_tpl)
               <p class="mb-1" style="font-size: 1.2rem;">氏名</p>
               <input type="text" id="checkName" class="form-control blank" name="contactName" placeholder="テスト太郎" value=<?php echo $_smarty_tpl->tpl_vars['keepText']->value['name'];?>
 >
-                            <p class="nameLength" style="color: red;"></p>
+              <p class="blankAttention" style="color: red;">氏名は必須入力です</p>
+              <p class="nameLength" style="color: red;"></p>
               <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['name'];?>
 </p>
             </div>
@@ -66,7 +67,8 @@ function content_65f1049a6a10e7_51234423 (Smarty_Internal_Template $_smarty_tpl)
               <p class="mb-1" style="font-size: 1.2rem;">フリガナ</p>
               <input type="text" id="checkKana" class="form-control blank" name="contactKana" placeholder="テストタロウ" value=<?php echo $_smarty_tpl->tpl_vars['keepText']->value['kana'];?>
 >
-                            <p class="kanaLength" style="color: red;"></p>
+              <p class="blankAttention" style="color: red;">フリガナは必須入力です</p>
+              <p class="kanaLength" style="color: red;"></p>
               <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['kana'];?>
 </p>
             </div>
@@ -82,7 +84,8 @@ function content_65f1049a6a10e7_51234423 (Smarty_Internal_Template $_smarty_tpl)
               <p class="mb-1" style="font-size: 1.2rem;">メールアドレス</p>
               <input type="email" id="checkEmail" class="form-control blank"  name="contactEmail" placeholder="geekation@exemple.com" value=<?php echo $_smarty_tpl->tpl_vars['keepText']->value['email'];?>
 >
-                            <p class="emailAttention" style="color: red;"></p>
+              <p class="blankAttention" style="color: red;">メールアドレスは必須入力です</p>
+              <p class="emailAttention" style="color: red;"></p>
               <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['email_1'];?>
 </p>
               <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['email_2'];?>
@@ -92,7 +95,8 @@ function content_65f1049a6a10e7_51234423 (Smarty_Internal_Template $_smarty_tpl)
               <p class="mb-1" style="font-size: 1.2rem;">お問い合せ内容</p>
               <textarea id="checkBody" class="form-control blank"  name="contactBody" placeholder="お問い合わせ内容"><?php echo $_smarty_tpl->tpl_vars['keepText']->value['body'];?>
 </textarea>
-                            <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['body'];?>
+              <p class="blankAttention" style="color: red;">お問い合せ内容は必須入力です</p>
+              <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['body'];?>
 </p>
             </div>
             <div class="d-flex justify-content-center">

@@ -19,7 +19,7 @@
     <div class="p-4 container-field form-orange">
       <div class="row justify-content-center">
         <div class="mx-auto col-6">
-          <h2 class="mb-4 text-center">お問い合わせ</h2>{var_dump($keepText)}    
+          <h2 class="mb-4 text-center">お問い合わせ</h2>  
           <form id="contactForm" action="/contact/form-input" method="post" class="bg-white p-3 rounded mb-5 mx-auto " >
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">氏名</p>
