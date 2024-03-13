@@ -47,10 +47,10 @@ class Contact extends Db{
       return $lastId;
 
     } catch(PDOException $e) {
-            // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
-            $this->dbh->rollBack();
-            echo "登録失敗: " . $e->getMessage() . "\n";
-            exit();
+      // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
+      $this->dbh->rollBack();
+      echo "登録失敗: " . $e->getMessage() . "\n";
+      exit();
     }
   }
 
@@ -70,8 +70,8 @@ class Contact extends Db{
       return $contacts;
 
     } catch (PDOException $e) {
-            echo 'エラー';
-            exit();
+      echo 'エラー';
+      exit();
     }
   }
 
@@ -122,10 +122,10 @@ class Contact extends Db{
       return;
 
     } catch(PDOException $e) {
-        // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
-        $this->dbh->rollBack();
-        echo "送信失敗: " . $e->getMessage() . "\n";
-        exit();
+      // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
+      $this->dbh->rollBack();
+      echo "送信失敗: " . $e->getMessage() . "\n";
+      exit();
     }
   }
 
@@ -142,12 +142,12 @@ class Contact extends Db{
 
       $this->dbh->commit();
       return;
-      
+
     } catch(PDOException $e) {
-        // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
-        $this->dbh->rollBack();
-        echo "削除失敗: " . $e->getMessage() . "\n";
-        exit();
+      // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
+      $this->dbh->rollBack();
+      echo "削除失敗: " . $e->getMessage() . "\n";
+      exit();
     }
   }
 }
