@@ -24,39 +24,39 @@
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">氏名</p>
               <input type="text" id="checkName" class="form-control blank" name="contactName" placeholder="テスト太郎" value={$keepText['name']|default : ''}>
-              <p class="blankAttention" style="color: red;">氏名は必須入力です</p>
+              <p class="blankAttention" style="color: red;"></p>
               <p class="nameLength" style="color: red;"></p>
-              <p style="color: red;">{$errorMessages['name']}</p>
+              <p style="color: red;">{$errorMessages['name']|default : ''}</p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">フリガナ</p>
               <input type="text" id="checkKana" class="form-control blank" name="contactKana" placeholder="テストタロウ" value={$keepText['kana']|default : ''}>
-              <p class="blankAttention" style="color: red;">フリガナは必須入力です</p>
+              <p class="blankAttention" style="color: red;"></p>
               <p class="kanaLength" style="color: red;"></p>
-              <p style="color: red;">{$errorMessages['kana']}</p>
+              <p style="color: red;">{$errorMessages['kana']|default : ''}</p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">電話番号</p>
               <input type="tel" id="checkTel" class="form-control"  name="contactTel" placeholder="080xxxxxxxx" value={$keepText['tel']|default : ''}>
               <p class="telAttention" style="color: red;"></p>
-              <p style="color: red;">{$errorMessages['tel']}</p>
+              <p style="color: red;">{$errorMessages['tel']|default : ''}</p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">メールアドレス</p>
               <input type="email" id="checkEmail" class="form-control blank"  name="contactEmail" placeholder="geekation@exemple.com" value={$keepText['email']|default : ''}>
-              <p class="blankAttention" style="color: red;">メールアドレスは必須入力です</p>
+              <p class="blankAttention" style="color: red;"></p>
               <p class="emailAttention" style="color: red;"></p>
-              <p style="color: red;">{$errorMessages['email_1']}</p>
-              <p style="color: red;">{$errorMessages['email_2']}</p>
+              <p style="color: red;">{$errorMessages['email_1']|default : ''}</p>
+              <p style="color: red;">{$errorMessages['email_2']|default : ''}</p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">お問い合せ内容</p>
               <textarea id="checkBody" class="form-control blank"  name="contactBody" placeholder="お問い合わせ内容">{$keepText['body']|default : ''}</textarea>
-              <p class="blankAttention" style="color: red;">お問い合せ内容は必須入力です</p>
-              <p style="color: red;">{$errorMessages['body']}</p>
+              <p class="blankAttention" style="color: red;"></p>
+              <p style="color: red;">{$errorMessages['body']|default : ''}</p>
             </div>
             <div class="d-flex justify-content-center">
-              <input type="submit" class="col-3 btn btn-warning" value="送信">
+              <input type="submit" class="col-3 btn btn-warning" onclick="submitClick()" value="送信">
             </div>
           </form>
         </div>

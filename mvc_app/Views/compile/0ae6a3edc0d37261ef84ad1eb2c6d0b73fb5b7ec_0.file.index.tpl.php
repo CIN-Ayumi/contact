@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-13 12:33:04
+/* Smarty version 4.3.4, created on 2024-03-13 14:04:51
   from '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65f11e702bd6b5_39250376',
+  'unifunc' => 'content_65f133f3e7dc92_46240589',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ae6a3edc0d37261ef84ad1eb2c6d0b73fb5b7ec' => 
     array (
       0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/index.tpl',
-      1 => 1710300779,
+      1 => 1710306181,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65f11e702bd6b5_39250376 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f133f3e7dc92_46240589 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -51,23 +51,24 @@ function content_65f11e702bd6b5_39250376 (Smarty_Internal_Template $_smarty_tpl)
     <div class="p-4 container-field form-orange">
       <div class="row justify-content-center">
         <div class="mx-auto col-6">
-          <h2 class="mb-4 text-center">お問い合わせ</h2>  <?php echo var_dump($_smarty_tpl->tpl_vars['keepText']->value);?>
-
+          <h2 class="mb-4 text-center">お問い合わせ</h2>
           <form id="contactForm" action="/contact/form-input" method="post" class="bg-white p-3 rounded mb-5 mx-auto " >
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">氏名</p>
               <input type="text" id="checkName" class="form-control blank" name="contactName" placeholder="テスト太郎" value=<?php echo (($tmp = $_smarty_tpl->tpl_vars['keepText']->value['name'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 >
-                            <p class="nameLength" style="color: red;"></p>
-              <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['name'];?>
+              <p class="blankAttention" style="color: red;"></p>
+              <p class="nameLength" style="color: red;"></p>
+              <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['name'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">フリガナ</p>
               <input type="text" id="checkKana" class="form-control blank" name="contactKana" placeholder="テストタロウ" value=<?php echo (($tmp = $_smarty_tpl->tpl_vars['keepText']->value['kana'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 >
-                            <p class="kanaLength" style="color: red;"></p>
-              <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['kana'];?>
+              <p class="blankAttention" style="color: red;"></p>
+              <p class="kanaLength" style="color: red;"></p>
+              <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['kana'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
             </div>
             <div class="contact-group">
@@ -75,28 +76,30 @@ function content_65f11e702bd6b5_39250376 (Smarty_Internal_Template $_smarty_tpl)
               <input type="tel" id="checkTel" class="form-control"  name="contactTel" placeholder="080xxxxxxxx" value=<?php echo (($tmp = $_smarty_tpl->tpl_vars['keepText']->value['tel'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 >
               <p class="telAttention" style="color: red;"></p>
-              <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['tel'];?>
+              <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['tel'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">メールアドレス</p>
               <input type="email" id="checkEmail" class="form-control blank"  name="contactEmail" placeholder="geekation@exemple.com" value=<?php echo (($tmp = $_smarty_tpl->tpl_vars['keepText']->value['email'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 >
-                            <p class="emailAttention" style="color: red;"></p>
-              <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['email_1'];?>
+              <p class="blankAttention" style="color: red;"></p>
+              <p class="emailAttention" style="color: red;"></p>
+              <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['email_1'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
-              <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['email_2'];?>
+              <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['email_2'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
             </div>
             <div class="contact-group">
               <p class="mb-1" style="font-size: 1.2rem;">お問い合せ内容</p>
               <textarea id="checkBody" class="form-control blank"  name="contactBody" placeholder="お問い合わせ内容"><?php echo (($tmp = $_smarty_tpl->tpl_vars['keepText']->value['body'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </textarea>
-                            <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['body'];?>
+              <p class="blankAttention" style="color: red;"></p>
+              <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['body'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
             </div>
             <div class="d-flex justify-content-center">
-              <input type="submit" class="col-3 btn btn-warning" value="送信">
+              <input type="submit" class="col-3 btn btn-warning" onclick="submitClick()" value="送信">
             </div>
           </form>
         </div>

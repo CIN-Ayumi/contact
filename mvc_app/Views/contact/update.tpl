@@ -27,40 +27,40 @@
                 <input id="checkName" class=" form-control blank col-11" type="text" name="name" value={$myContact['name']}>
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="nameLength" style="color: red;"></p>
-                <p style="color: red;">{$errorMessages['name']}</p>
+                <p style="color: red;">{$errorMessages['name']|default:''}</p>
               </div>
               <div class="form-item container">
                 <p class="label-text">フリガナ</p>
                 <input id="checkKana" class="form-control blank col-11" type="text" name="kana" value={$myContact['kana']}>
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="kanaLength" style="color: red;"></p>
-                <p style="color: red;">{$errorMessages['kana']}</p>
+                <p style="color: red;">{$errorMessages['kana']|default:''}</p>
               </div>
               <div class="form-item container">
                 <p class="label-text">電話番号</p>
                 <input id="checkTel" class="form-control col-11" type="text" name="tel" value={$myContact['tel']}>
                 <p class="telAttention" style="color: red;"></p>
-                <p style="color: red;">{$errorMessages['tel']}</p>
+                <p style="color: red;">{$errorMessages['tel']|default:''}</p>
               </div>
               <div class="form-item container">
                 <p class="label-text">メールアドレス</p>
                 <input id="checkEmail" class="form-control blank col-11" type="text" name="email" value={$myContact['email']}>
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="emailAttention" style="color: red;"></p>
-                <p style="color: red;">{$errorMessages['email_1']}</p>
-                <p style="color: red;">{$errorMessages['email_2']}</p>
+                <p style="color: red;">{$errorMessages['email_1']|default:''}</p>
+                <p style="color: red;">{$errorMessages['email_2']|default:''}</p>
               </div>
               <div class="form-item container">
                 <p class="label-text">お問い合わせ内容</p>
                 <textarea id="checkBody" class="form-control blank col-11" name="body">{$myContact['body']}</textarea>
                 <p class="blankAttention" style="color: red;"></p>
-                <p style="color: red;">{$errorMessages['body']}</p>
+                <p style="color: red;">{$errorMessages['body']|default:''}</p>
               </div>
               <div class="row">
                 <p class="mx-auto">上記の内容に変更しますか？</p>
               </div>
               <div class="text-center">
-                <input type="submit" class="col-4 btn btn-warning mb-3" value="更新"><br>
+                <input type="submit" class="col-4 btn btn-warning mb-3" onclick="submitClick()" value="更新"><br>
                 <button class="col-4 mt-2 mb-5 btn btn-light">キャンセル</button>
               </div>
             </form>

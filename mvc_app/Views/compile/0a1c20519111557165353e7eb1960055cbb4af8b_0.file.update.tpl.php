@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-12 18:15:15
+/* Smarty version 4.3.4, created on 2024-03-13 14:25:37
   from '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_65f01d23398b65_05543224',
+  'unifunc' => 'content_65f138d17065c6_77077382',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a1c20519111557165353e7eb1960055cbb4af8b' => 
     array (
       0 => '/Users/itouayumi/geekation/contact/mvc_app/Views/contact/update.tpl',
-      1 => 1710234912,
+      1 => 1710307533,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layout/footer.tpl' => 1,
   ),
 ),false)) {
-function content_65f01d23398b65_05543224 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f138d17065c6_77077382 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,7 +59,7 @@ function content_65f01d23398b65_05543224 (Smarty_Internal_Template $_smarty_tpl)
 >
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="nameLength" style="color: red;"></p>
-                <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['name'];?>
+                <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['name'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
               </div>
               <div class="form-item container">
@@ -68,7 +68,7 @@ function content_65f01d23398b65_05543224 (Smarty_Internal_Template $_smarty_tpl)
 >
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="kanaLength" style="color: red;"></p>
-                <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['kana'];?>
+                <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['kana'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
               </div>
               <div class="form-item container">
@@ -76,7 +76,7 @@ function content_65f01d23398b65_05543224 (Smarty_Internal_Template $_smarty_tpl)
                 <input id="checkTel" class="form-control col-11" type="text" name="tel" value=<?php echo $_smarty_tpl->tpl_vars['myContact']->value['tel'];?>
 >
                 <p class="telAttention" style="color: red;"></p>
-                <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['tel'];?>
+                <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['tel'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
               </div>
               <div class="form-item container">
@@ -85,9 +85,9 @@ function content_65f01d23398b65_05543224 (Smarty_Internal_Template $_smarty_tpl)
 >
                 <p class="blankAttention" style="color: red;"></p>
                 <p class="emailAttention" style="color: red;"></p>
-                <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['email_1'];?>
+                <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['email_1'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
-                <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['email_2'];?>
+                <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['email_2'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
               </div>
               <div class="form-item container">
@@ -95,14 +95,14 @@ function content_65f01d23398b65_05543224 (Smarty_Internal_Template $_smarty_tpl)
                 <textarea id="checkBody" class="form-control blank col-11" name="body"><?php echo $_smarty_tpl->tpl_vars['myContact']->value['body'];?>
 </textarea>
                 <p class="blankAttention" style="color: red;"></p>
-                <p style="color: red;"><?php echo $_smarty_tpl->tpl_vars['errorMessages']->value['body'];?>
+                <p style="color: red;"><?php echo (($tmp = $_smarty_tpl->tpl_vars['errorMessages']->value['body'] ?? null)===null||$tmp==='' ? '' ?? null : $tmp);?>
 </p>
               </div>
               <div class="row">
                 <p class="mx-auto">上記の内容に変更しますか？</p>
               </div>
               <div class="text-center">
-                <input type="submit" class="col-4 btn btn-warning mb-3" value="更新"><br>
+                <input type="submit" class="col-4 btn btn-warning mb-3" onclick="submitClick()" value="更新"><br>
                 <button class="col-4 mt-2 mb-5 btn btn-light">キャンセル</button>
               </div>
             </form>
