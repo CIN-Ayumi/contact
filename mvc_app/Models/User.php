@@ -17,6 +17,7 @@ class User extends Db
      * @param string $kana フリガナ
      * @param string $email メールアドレス
      * @param string $password パスワード
+     * 
      * @return false|string 'ユーザーID' または メールアドレスが重複している場合はfalseを返却
      */
 
@@ -74,25 +75,31 @@ class User extends Db
           if (is_array($result) && count($result) === 1) {
               $result_password = $result[0]['password'];
               if (password_verify($password, $result_password)) {
+
                   return $result[0];
               }
               return false;
-          } else {
+
+          } else {            
               return false;
           }
+
         } catch (PDOException $e) {
           echo "認証エラー: " . $e->getMessage() . "\n";
           exit();
         }
     }
 
+
     /*
     *
     * マイページ表示用のユーザーデータを取得して返却する
     *
     * @param string $id ユーザーID
+    *
     * @return stdClass object型で取得したユーザーのデータを返却する
     */
+
     public function getMyPage(string $id): stdClass
     {
         try{
@@ -115,8 +122,10 @@ class User extends Db
     * @param string $kana フリガナ
     * @param string $email メールアドレス
     * @param string|null $password パスワード
+
     * @return bool メールアドレス重複時は更新処理をせずfalseを返却する
     */
+
     public function update(string $id, string $name, string $kana, string $email, string $password = null): bool
     {
         try{
@@ -127,12 +136,12 @@ class User extends Db
             $stmt->bindParam(':email', $email);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_OBJ);
-            if($result->count == '0'){
+            if ($result->count == '0') {
                 // 重複がない場合は処理を続行
                 $this->dbh->beginTransaction();
 
                 $query =  'UPDATE users SET name = :name, kana = :kana, email = :email';
-                if(!empty($password)){
+                if (!empty($password)) {
                     $query .= ', password = :password';
                 }
                 $query .= ' WHERE id = :id';
@@ -148,8 +157,9 @@ class User extends Db
                 $stmt->execute();
                 // トランザクションを完了することでデータの書き込みを確定させる
                 $this->dbh->commit();
+
                 return true;
-            }else{
+            } else {
                 // メールアドレス検索の結果重複していた場合はfalseを返却
                 return false;
             }
@@ -161,12 +171,14 @@ class User extends Db
             exit();
         }
     }
+
     /*
     *
     * ユーザーIDに対応するユーザーのデータをテーブルから削除する
     * @param string $id ユーザーID
     * @return void
     */
+
     public function deleteUserAccount(string $id) 
     {
         try{
@@ -177,6 +189,7 @@ class User extends Db
             $stmt->execute();
             // トランザクションを完了することでデータの書き込みを確定させる
             $this->dbh->commit();
+            
             return;
         } catch (PDOException $e) {
             // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。

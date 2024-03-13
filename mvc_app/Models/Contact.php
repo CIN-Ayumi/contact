@@ -45,7 +45,8 @@ class Contact extends Db{
       $this->dbh->commit();
 
       return $lastId;
-    } catch(PDOException $e){
+
+    } catch(PDOException $e) {
             // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
             $this->dbh->rollBack();
             echo "登録失敗: " . $e->getMessage() . "\n";
@@ -61,10 +62,13 @@ class Contact extends Db{
       $stmt = $this->dbh->prepare($query);
       $stmt->execute();
       $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
       foreach ($contacts as & $contact) {
         $row['body'] = nl2br($contact['body']);
         }
+
       return $contacts;
+
     } catch (PDOException $e) {
             echo 'エラー';
             exit();
@@ -72,7 +76,8 @@ class Contact extends Db{
   }
 
   //特定のidの内容をお問い合せ編集画面に表示する
-   public function getMyContact(string $id){
+   public function getMyContact(string $id)
+   {
       try{
        $this->dbh->beginTransaction();
        $query = 'SELECT * FROM contacts WHERE id = :id'; 
@@ -80,8 +85,10 @@ class Contact extends Db{
        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
        $stmt->execute();
        $myContact = $stmt->fetch(PDO::FETCH_ASSOC);
+
       return $myContact;
-      } catch(PDOException $e){
+
+      } catch(PDOException $e) {
         // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
         $this->dbh->rollBack();
         echo "登録失敗: " . $e->getMessage() . "\n";
@@ -113,6 +120,7 @@ class Contact extends Db{
       $this->dbh->commit();
 
       return;
+
     } catch(PDOException $e) {
         // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
         $this->dbh->rollBack();
@@ -134,6 +142,7 @@ class Contact extends Db{
 
       $this->dbh->commit();
       return;
+      
     } catch(PDOException $e) {
         // 不具合があった場合トランザクションをロールバックして変更をなかったコトにする。
         $this->dbh->rollBack();
