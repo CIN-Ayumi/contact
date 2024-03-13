@@ -20,7 +20,8 @@ class ContactController extends Controller
   public function contact(){   
     $contact = new Contact;
     $contacts = $contact->getContacts();
-    $this->view('contact/index',['contacts' => $contacts]);
+    $keepText[] = '';
+    $this->view('contact/index',['contacts' => $contacts, 'keepText' => $keepText]);
   }
 
     //確認画面
